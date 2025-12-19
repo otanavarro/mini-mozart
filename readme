@@ -1,1 +1,20 @@
-hello hi
+# Mini Mozart 🎹
+
+A digital piano built on an FPGA. Touch the screen, hear the notes, see the LEDs light up. All running on custom Verilog logic.
+
+## What It Does
+
+Mini Mozart turns a DE2-115 FPGA board into a working digital piano. We mapped touchscreen coordinates to musical notes (including black keys), synthesized audio waveforms in real time, and added visual feedback with LEDs. Press anywhere on the screen and you get immediate sound output through the speaker.
+
+## How It Works
+
+The whole system coordinates four I/O devices using Verilog and ASE100 drivers: the touchscreen captures your input, the speaker outputs synthesized audio, LEDs show which notes are active, and an SD card handles data storage. Getting all four to work together without latency was the fun part.
+
+We wrote custom logic to map x-y coordinates to specific notes, generate sound waves, and handle black key detection. The waveform synthesis got a lot of tuning to make it actually sound like a piano instead of just beeps.
+
+## Built With
+
+**Hardware:** DE2-115 FPGA Board  
+**HDL:** Verilog  
+**Drivers:** ASE100  
+**Tools:** Quartus Prime, Git
